@@ -1,13 +1,16 @@
 # Importing text files using base R
 Spinach_CFUs <- read.delim("C:/Users/18705/Desktop/R_practice/Spinach_CFUs.tsv", sep = "\t")
 
+
 # Importing data from excel
 library(readxl)
-Spinach_CFU_Data <- read_excel("C:/Users/18705/OneDrive/Spinach Pilot 2 CFU Data.xlsx", 
-                                       range = "A3:E21")
+Spinach_CFU_Data <- read_excel("R_analysis/Spinach Pilot 2 CFU Data.xlsx",
+                                                           range = "A3:E21", col_types = c("text",
+                                                                                           "date", "text", "numeric", "text"))
 #Checking the strcuture of the new table
 str(Spinach_CFU_Data)
 
+Spinach_CFU_Data$`CFU/mL`
 
 #### Both commands below are not longer required since you fixed the excel
 #Deleting the character value from the data table
